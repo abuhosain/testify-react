@@ -1,15 +1,14 @@
- 
-import './App.css'
+import "./App.css";
+import PrimaryButton from "./components/PrimaryButton";
 
-function App() { 
-
+function App() {
   return (
-    <>
-      <div>
-        <h1>Hello World</h1>
-      </div>
-    </>
-  )
+    <div>
+      <h1>Hello World</h1>
+      <PrimaryButton />
+      <PrimaryButton  actionType="Delete"/>
+    </div>
+  );
 }
 
-export default App
+export default App;
