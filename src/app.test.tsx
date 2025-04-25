@@ -4,7 +4,7 @@ import App from './App';
 it('should render hello world correctly', () => {
     render(<App />);
 
-    const element = screen.getByText("Hello World!!!");
+    const element = screen.getByText("Hello World");
 
     expect(element).toBeInTheDocument();
 })
