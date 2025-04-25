@@ -1,6 +1,6 @@
 name: Ready the code and deploy
 
-on: 
+on:
   pull_request:
     types: opened
 
