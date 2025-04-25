@@ -24,6 +24,7 @@ jobs:
 
   build-code:
     runs-on: ubuntu-latest
+    needs: test-code
     steps:
       - name: install nodejs
         uses: actions/setup-node@v4
@@ -40,4 +41,12 @@ jobs:
         
       - name: Build the code
         run: yarn build
+
+
+  deploy-code:
+    runs-on: ubuntu-latest
+    needs: build-code
+    steps:
+      - name: Deploy this code
+        run: echo "Deploying code to production"
 
