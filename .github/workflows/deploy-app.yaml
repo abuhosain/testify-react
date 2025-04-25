@@ -6,7 +6,13 @@ jobs:
   test-code:
     runs-on: ubuntu-latest
     steps:
-      - name: print working directory
-        run: |
-          node -v
-          git --version
+      - name: copying code
+        uses: actions/checkout@v4
+      - name: install nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.6.1'
+      - name: check node version
+        run: node -v
+
+
