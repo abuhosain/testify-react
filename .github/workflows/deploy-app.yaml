@@ -14,13 +14,30 @@ jobs:
         with:
           node-version: '20'
 
-      - name: check node version
-        run: node -v
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: run tests
+        run: yarn test
+
+
+
+  build-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: copying code
+        uses: actions/checkout@v4
+
 
       - name: install dependencies
         run: yarn install --frozen-lockfile
 
         
-      - name: run tests
-        run: npm test
+      - name: Build the code
+        run: yarn build
 
